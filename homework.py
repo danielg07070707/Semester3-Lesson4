@@ -16,6 +16,7 @@ t.pencolor("green")
 t.fillcolor("green")
 screen.bgcolor("skyblue")
 screen.setup(1000, 500)
+t.hideturtle
 
 # we are going to draw a beautiful garden today
 
@@ -28,7 +29,7 @@ for i in range(4):
 t.end_fill()
 
 
-t.goto(0, 0)
+t.goto(-450, 0)
 
 
 # one carrot:
@@ -53,30 +54,25 @@ def draw_carrot():
     t.forward(30)
     t.setheading(0)
     t.pensize(1)
+    
+    def teleport():
+        t.penup()
+        t.goto(x,y)
+        t.pendown()
 
-# this is one carrot
-
-draw_carrot()
-
-
-# hint: you'll need this function
-def teleport(x,y):
+for i in range(100):
+    draw_carrot()
     t.penup()
-    t.goto(x, y)
+    t.setheading(270)
+    t.forward(30)
+    t.setheading(0)
+    t.forward(random.randint(20,30))
+    t.setheading(270)
+    t.forward(random.randint(20,50))
+    t.setheading(90)
+    t.forward(random.randint(10,50))
+    t.setheading(0)
     t.pendown()
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
